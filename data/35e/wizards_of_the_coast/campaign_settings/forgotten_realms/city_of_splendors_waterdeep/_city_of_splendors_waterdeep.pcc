@@ -4,6 +4,7 @@ GAMEMODE:35e|Bahamut35e
 TYPE:Wizards of the Coast.Campaign Setting.Forgotten Realms
 RANK:3
 STATUS:ALPHA
+PRECAMPAIGN:1,INCLUDES=Player's Guide to Faerun
 GENRE:Fantasy
 BOOKTYPE:Setting
 SETTING:Faerun
@@ -18,4 +19,12 @@ ISOGL:NO
 INFOTEXT:City of Splendor Supplement
 
 # Basics
+
+ABILITY:csw_abilities.lst
+ABILITYCATEGORY:csw_abilitycategories.lst
+CLASS:csw_classes.lst
+EQUIPMENT:csw_equip.lst
+EQUIPMOD:csw_equipmods.lst
+FEAT:csw_feats.lst
 SPELL:csw_spells.lst
+
