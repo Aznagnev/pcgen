@@ -1,0 +1,66 @@
+# CVS $Revision: 17893 $ $Author: amaitland $ -- Fri Oct 19 20:16:09 2012 -- reformated by prettylst.pl v1.39 (build 15052)
+SOURCELONG:My Campaign	SOURCESHORT:My	SOURCEWEB:http://www.mywebsite.com	SOURCEDATE:2008-01
+
+#insert your data here
+
+#Every line that starts with a '#' is a comment. You may want to remove these comments, if you use this file to set up
+#your own data. Remember not to put the '#' at the start of your own data, as PCGen would see it as a comment only.
+#
+#When Running PCGen, you can select "Help > Documentation > List Files > List File Tag Index > Feat File tags" to find
+#out how the tags in the feats file work. Some of the tags used here are global tags. You will see an alphabetical
+#listing of all PCGen tags to the left of the documentation window. You can find the global tags there as well.
+#
+# Abilities are the newest method for all aspects of class & race abilities. Currently we use hidden feats to emulate
+# class and racial abilities. The advent of Abilities allows us to use one standard format for a variety of things.
+# Generally Abilities are exactly the same in format as a Feat with the exception of a NEW tag CATEGORY which tells
+# PCGen what the ability is to be categoried as - example: My Ability is part of the my_abilities category, So I can add
+# points only to the my_abilities allowing very small and restricted lists. Another example would be Fighter Bonus feats.
+#
+# Feat and ability are used through out this example as they almost the same thing - ABILITY can also be used to add "Feats"
+# using the CATEGORY:FEAT tag.
+# You can also use PREFEAT for any CATEGORY:FEAT, for the rest you'll need to use PREABILITY:x,CATEGORY=<category>,Foo,TYPE.Bar (x is the number)
+#####1st Example
+
+#My Ability			CATEGORY:my_abilities		TYPE:General.DataMonkey		DESC:See Text						SOURCEPAGE:Custom
+#My Second Ability	CATEGORY:Special			TYPE:MonkeyFoo			DESC:This is the great second ability.		SOURCEPAGE:Custom	PREABILITY:1,CATEGORY=my_abilities,My Ability
+
+###SAMPLE FOR 'Ability by Skill'
+#Ac Ba			CATEGORY:AbilitybySkill		TYPE:AbilitybySkill.Movement	VISIBLE:YES		!PREABILITY:1,CATEGORY=AbilitybySkill,Ac Ba	PRESKILL:1,Tumble=12	PREVARLT:AbilitybySkillCount,AbilitybySkillMax	DEFINE:AbilitybySkillCount|0		DESC:<appropriate description>	BONUS:VAR|AbilitybySkillCount|1
+
+#####
+#Each ability takes one line, just like a feat, and the first field must be the abilities' name. In the Example the name of the ability is My Ability.
+#When naming feats you should only use parentheses at the end of the name if the name is not duplicated elsewhere. This is
+#because of how PCGen names abilities which can be taken multiple times. For example, the Feat/ability Weapon Focus when taken will display
+#as Weapon Focus(Dagger). Another example is Armor Proficiency (Light), there is no feat named Armor Proficiency so this name
+#is fine. What is happening is when PCGen finds a feat with parentheses that duplicates the name of another feat it assumes
+#that feat is an instance of the one without parentheses and does not display the one with parentheses.
+#
+#The TYPE tag is holding a . (period) delimited list of the types the ability/feat is.
+#
+#The DESC tag is used to hold the description of the Ability/Feat. In our files we usually keep the description brief, so the user
+#still need to own the book to make use of of the data, but for your personal files can get as elaborate as you want there.
+#
+#The MULT tag determines if a ability/feat can be taken multiple times. If the value is set to YES, then you MUST also use a CHOOSE
+#tag.
+#
+#The CHOOSE tag must be paired with a MULT:YES tag in feats for it to work properly. It will display a popup window that asks
+#for a selection according to what is being called for. There is a multitude of existing CHOOSE tags in PCGen. If you are
+#looking into the documentation under List File Tag Index, you can find them listed under the topic "CHOOSE tags".
+#
+#The BONUS tags are a group of similar tags, that grant some form of Bonus to another already existing tag. To read a description
+#of them, look in the List File Tag Index under the topic "Bonus tags".
+#
+#The SOURCEPAGE tag can be used to hold a reference to where you can find the feat. This will be displayed in PCGen.
+
+Expanded Choices			KEY:Expanded Choices ~ Special Mount	CATEGORY:Internal			TYPE:SpecialMountSelection.SpecialMountAlternate																																																																				COMPANIONLIST:Special Mount|Horse (Warhorse Heavy),Shark (Large),Lion|PRESIZELTEQ:M	COMPANIONLIST:Special Mount|Dog (Riding),Pony (War)|PRESIZELTEQ:S	COST:0
+
+
+
+#######Kobold Paragon
+Weapon and Armor Proficiency	KEY:Weapon and Armor Proficiency ~ Kobold Paragon	CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:The kobold paragon is proficient with all simple weapons, plus the heavy pick and light pick. Kobold paragons are also proficient with light armor. Kobold paragons treat the dire pick [1] as a martial weapon that can be wielded two-handed as a simple weapon and may treat greatpicks [see Kobolds: Playing to Their Strengths] as martial weapons, rather than exotic weapons.																																																																ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight|TYPE=WeaponProfSimple							AUTO:WEAPONPROF|Pick (Heavy)|Pick (Light)|Pick (Dire)|TYPE=Auto																											SOURCEPAGE:p.36
+Manual Expertise				KEY:Manual Expertise ~ Kobold Paragon				CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:A kobold paragon may add their class level as a racial bonus on Craft [trapmaking], Profession [mining], and Search checks.													BONUS:SKILL|Craft (Trapmaking),Profession (Miner),Search|3|TYPE=Racial.STACK
+Tunnel Defense					KEY:Tunnel Defense ~ Kobold Paragon					CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:At 1st level, a kobold paragon uses confined spaces to their advantage in melee combat. &nl; A kobold paragon is treated as a Medium opponent when using or resisting any special attack [for example, bull rush, disarm, grapple] but only when fighting in a location no wider than their combat space [5-ft. wide]. In addition, a kobold paragon retains their Dexterity bonus to AC even if caught flat-footed or struck by an invisible attacker in these confined conditions. &nl; If a kobold paragon has uncanny dodge from a different class, the character automatically gains the benefits of improved uncanny dodge, but only when fighting in confined conditions [as above].
+Spells per Day					KEY:Spells ~ Kobold Paragon							CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:At 2nd and 3rd-level, a kobold paragon gains new spells per day and spells known as if the character had also gained a level in sorcerer. The kobold paragon does not, however, gain any other benefit a character of that class would have gained [familiar abilities, and so on]. This essentially means that the character adds the level of kobold paragon to their level in sorcerer, then determines spells per day, spells known, and caster level accordingly. &nl; If a kobold paragon has no levels in sorcerer, this class feature has no effect.																																																										SOURCEPAGE:p.36
+Improved Darkvision				KEY:Improved Darkvision ~ Kobold Paragon			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:At 2nd level, a kobold paragon’s darkvision range increases by 30 feet.																																																																												BONUS:VAR|DarkvisionRange|30
+No Light Sensitivity			KEY:No Light Sensitivity ~ Kobold Paragon			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:At 2nd level, a kobold paragon loses their race's light sensitivity.
+Ability Boost					KEY:Ability Boost ~ Kobold Paragon					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:At 3rd level, a kobold paragon's Charisma score increases by 2 points																																																																																																										BONUS:STAT|CHA|2|TYPE=Racial.STACK											SOURCEPAGE:p.36
