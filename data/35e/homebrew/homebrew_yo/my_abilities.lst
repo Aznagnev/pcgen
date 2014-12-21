@@ -64,3 +64,18 @@ Spells per Day					KEY:Spells ~ Kobold Paragon							CATEGORY:Special Ability	TY
 Improved Darkvision				KEY:Improved Darkvision ~ Kobold Paragon			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:At 2nd level, a kobold paragon’s darkvision range increases by 30 feet.																																																																												BONUS:VAR|DarkvisionRange|30
 No Light Sensitivity			KEY:No Light Sensitivity ~ Kobold Paragon			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:At 2nd level, a kobold paragon loses their race's light sensitivity.
 Ability Boost					KEY:Ability Boost ~ Kobold Paragon					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:At 3rd level, a kobold paragon's Charisma score increases by 2 points																																																																																																										BONUS:STAT|CHA|2|TYPE=Racial.STACK											SOURCEPAGE:p.36
+
+
+
+#######Tue Necromancer
+Weapon and Armor Proficiency	KEY:True Necromancer ~ Weapon and Armor Proficiency	CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:None new
+Spells per Day					KEY:True Necromancer ~ Spells per Day				CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:Spells per day
+Rebuke undead					KEY:True Necromancer ~ Rebuke undead				CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:contunue growing rebuke undead
+Create undead					KEY:True Necromancer ~ Create undead				CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:create undead
+Necromantic prowess				KEY:True Necromancer ~ Necromantic prowess			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:necro prow
+Zone of desecration				KEY:True Necromancer ~ Zone of desecration			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:desectation like the speel
+Major desecration				KEY:True Necromancer ~ Major desecration			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:better
+Create greater undead			KEY:True Necromancer ~ Create greater undead		CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:better undead
+Horrid wilting					KEY:True Necromancer ~ Horrid wilting				CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:i don't remmeber
+Energy drain					KEY:True Necromancer ~ Energy drain					CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:energy drain
+Wail of the banshee				KEY:True Necromancer ~ Wail of the banshee			CATEGORY:Special Ability	TYPE:SpecialQuality					DESC:like the spell

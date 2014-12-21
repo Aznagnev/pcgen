@@ -72,7 +72,7 @@ SOURCELONG:My Campaign	SOURCESHORT:My	SOURCEWEB:http://www.mywebsite.com	SOURCED
 # Class Name		Hit Dice	Type			Class Type			Abbreviation	Source Page		Combat bonus												Bonus
 CLASS:True Necromancer	HD:6		TYPE:PC.Prestige	CLASSTYPE:Prestige	ABB:TNec		SOURCEPAGE:p.192	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*1/2|PREVAREQ:UseFractionalBAB,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2
 # Class Name		Required Skill								Req. Spell Type
-CLASS:True Necromancer	PRESKILL:2,Knowledge (Arcana)=8,Knowledge (Religion)=8	PRESPELLTYPE:1,Arcane=3	PRESPELLTYPE:1,Divine=3	PREFEAT:1,Spell Focus (necromancy)
+CLASS:True Necromancer	PRESKILL:2,Knowledge (Arcana)=8,Knowledge (Religion)=8	PRESPELLTYPE:1,Arcane=2	PRESPELLTYPE:1,Divine=2	PREFEAT:1,Spell Focus (necromancy)
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:True Necromancer	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Heal|Knowledge (Arcana)|Knowledge (Religion)|TYPE=Profession|Search|Spellcraft
 ###Block:
@@ -129,87 +129,9 @@ CLASS:Kobold Paragon	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Concentration|TYPE=Craft
 
 
 
-
-# Class Name	Hit Dice	Type						Class Type		Abbreviation	Source Page		Bonus Languages					Group of Prohibited Spells																																																						Define			Combat bonus												Add domain number		Modify VAR			Template				Monster Role	Bonus
-CLASS:Cleric-Wizard	HD:6		TYPE:Base.PC.Spellcaster.Divine.Arcane	CLASSTYPE:PC	ABB:ClrWiz		SOURCEPAGE:p.xx	LANGBONUS:Abyssal,Celestial,Infernal,Draconic	PROHIBITSPELL:ALIGNMENT.Chaotic|PREMULT:1,[PREALIGN:LG,LN,LE],[PREDEITYALIGN:LG,LN,LE]	PROHIBITSPELL:ALIGNMENT.Evil|PREMULT:1,[PREALIGN:LG,NG,CG],[PREDEITYALIGN:LG,NG,CG]	PROHIBITSPELL:ALIGNMENT.Good|PREMULT:1,[PREALIGN:LE,NE,CE],[PREDEITYALIGN:LE,NE,CE]	PROHIBITSPELL:ALIGNMENT.Lawful|PREMULT:1,[PREALIGN:CG,CN,CE],[PREDEITYALIGN:CG,CN,CE] PROHIBITSPELL:SCHOOL.Abjuration|PREVARGTEQ:ProhibitAbjuration,1	PROHIBITSPELL:SCHOOL.Conjuration|PREVARGTEQ:ProhibitConjuration,1	PROHIBITSPELL:SCHOOL.Divination|PREVARGTEQ:ProhibitDivination,1	PROHIBITSPELL:SCHOOL.Enchantment|PREVARGTEQ:ProhibitEnchantment,1	PROHIBITSPELL:SCHOOL.Evocation|PREVARGTEQ:ProhibitEvocation,1	PROHIBITSPELL:SCHOOL.Illusion|PREVARGTEQ:ProhibitIllusion,1	PROHIBITSPELL:SCHOOL.Necromancy|PREVARGTEQ:ProhibitNecromancy,1	PROHIBITSPELL:SCHOOL.Transmutation|PREVARGTEQ:ProhibitTransmutation,1	DEFINE:ClericLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|PREVAREQ:UseFractionalBAB,0	BONUS:DOMAIN|NUMBER|2	BONUS:VAR|ClericLVL|CL	TEMPLATE:RighteousMightDR	ROLE:Cleric		BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3
-# Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Cleric	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Diplomacy|Heal|Knowledge (Arcana)|Knowledge (History)|Knowledge (Religion)|Knowledge (The Planes)|TYPE=Profession|Spellcraft
-# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
-CLASS:Cleric	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9	BONUS:CASTERLEVEL|Cleric|CL
-###Block:
-1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.ClericProficiences
-1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric ~ Aura
-1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric ~ Spells
-1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric ~ Spontaneous Casting
-1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric ~ Turn or Rebuke Undead
-###Block:
-1	CAST:3,1
-2	CAST:4,2
-3	CAST:4,2,1
-4	CAST:5,3,2
-5	CAST:5,3,2,1
-6	CAST:5,3,3,2
-7	CAST:6,4,3,2,1
-8	CAST:6,4,3,3,2
-9	CAST:6,4,4,3,2,1
-10	CAST:6,4,4,3,3,2
-11	CAST:6,5,4,4,3,2,1
-12	CAST:6,5,4,4,3,3,2
-13	CAST:6,5,5,4,4,3,2,1
-14	CAST:6,5,5,4,4,3,3,2
-15	CAST:6,5,5,5,4,4,3,2,1
-16	CAST:6,5,5,5,4,4,3,3,2
-17	CAST:6,5,5,5,5,4,4,3,2,1
-18	CAST:6,5,5,5,5,4,4,3,3,2
-19	CAST:6,5,5,5,5,5,4,4,3,3
-20	CAST:6,5,5,5,5,5,4,4,4,4
-# Class Name	Hit Dice	Type										Class Type		Abbreviation	Source Page		Bonus Languages		Group of Prohibited Spells																																																																																				Define								Combat bonus												Modify VAR			Monster Role	Bonus
-CLASS:Wizard	HD:4		TYPE:PC.Base.Spellcaster.Arcane.NonSpontaneousArcaneCaster	CLASSTYPE:PC	ABB:Wiz		SOURCEPAGE:p.55	LANGBONUS:Draconic	PROHIBITSPELL:SCHOOL.Abjuration|PREVARGTEQ:ProhibitAbjuration,1	PROHIBITSPELL:SCHOOL.Conjuration|PREVARGTEQ:ProhibitConjuration,1	PROHIBITSPELL:SCHOOL.Divination|PREVARGTEQ:ProhibitDivination,1	PROHIBITSPELL:SCHOOL.Enchantment|PREVARGTEQ:ProhibitEnchantment,1	PROHIBITSPELL:SCHOOL.Evocation|PREVARGTEQ:ProhibitEvocation,1	PROHIBITSPELL:SCHOOL.Illusion|PREVARGTEQ:ProhibitIllusion,1	PROHIBITSPELL:SCHOOL.Necromancy|PREVARGTEQ:ProhibitNecromancy,1	PROHIBITSPELL:SCHOOL.Transmutation|PREVARGTEQ:ProhibitTransmutation,1	DEFINE:WizardLVL|0	DEFINE:WizardSpecialist|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*1/2|PREVAREQ:UseFractionalBAB,0	BONUS:VAR|WizardLVL|CL	ROLE:Wizard		BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3
-# Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Wizard	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Decipher Script|TYPE=Knowledge|TYPE=Profession|Spellcraft
-# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels	Spellbook		Caster level
-CLASS:Wizard	SPELLSTAT:INT	SPELLTYPE:Arcane	KNOWNSPELLS:LEVEL=0			SPELLBOOK:YES	BONUS:CASTERLEVEL|Wizard|CL
-#
-SUBCLASS:Abjurer		COST:2	PROHIBITCOST:1	CHOICE:SCHOOL|Abjuration	BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Abjurer Learning Bonus
-SUBCLASS:Conjurer		COST:2	PROHIBITCOST:1	CHOICE:SCHOOL|Conjuration	BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Conjurer Learning Bonus
-SUBCLASS:Diviner		COST:1	PROHIBITCOST:0	CHOICE:SCHOOL|Divination	BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Diviner Learning Bonus
-SUBCLASS:Enchanter	COST:2	PROHIBITCOST:1	CHOICE:SCHOOL|Enchantment	BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Enchanter Learning Bonus
-SUBCLASS:Evoker		COST:2	PROHIBITCOST:1	CHOICE:SCHOOL|Evocation		BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Evoker Learning Bonus
-SUBCLASS:Illusionist	COST:2	PROHIBITCOST:1	CHOICE:SCHOOL|Illusion		BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Illusionist Learning Bonus
-SUBCLASS:Necromancer	COST:2	PROHIBITCOST:1	CHOICE:SCHOOL|Necromancy	BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Necromancer Learning Bonus
-SUBCLASS:Transmuter	COST:2	PROHIBITCOST:1	CHOICE:SCHOOL|Transmutation	BONUS:VAR|WizardSpecialist|1	KNOWNSPELLSFROMSPECIALTY:1
-SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Transmuter Learning Bonus
-###Block:
-1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.WizardProficiencies
-1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard ~ Familiar|!PREABILITY:1,CATEGORY=ACF,TYPE.WizardSummonFamiliar
-1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard ~ Scribe Scroll|!PREABILITY:1,CATEGORY=ACF,TYPE.WizardScribeScroll
-5	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard ~ Bonus Feats|!PREABILITY:1,CATEGORY=ACF,TYPE.WizardBonusFeats
-1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard ~ Spellbooks|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Wizard=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Wizard=1]]
-###Block:
-1	CAST:3,1
-2	CAST:4,2
-3	CAST:4,2,1
-4	CAST:4,3,2
-5	CAST:4,3,2,1
-6	CAST:4,3,3,2
-7	CAST:4,4,3,2,1
-8	CAST:4,4,3,3,2
-9	CAST:4,4,4,3,2,1
-10	CAST:4,4,4,3,3,2
-11	CAST:4,4,4,4,3,2,1
-12	CAST:4,4,4,4,3,3,2
-13	CAST:4,4,4,4,4,3,2,1
-14	CAST:4,4,4,4,4,3,3,2
-15	CAST:4,4,4,4,4,4,3,2,1
-16	CAST:4,4,4,4,4,4,3,3,2
-17	CAST:4,4,4,4,4,4,4,3,2,1
-18	CAST:4,4,4,4,4,4,4,3,3,2
-19	CAST:4,4,4,4,4,4,4,4,3,3
-20	CAST:4,4,4,4,4,4,4,4,4,4
+#CLASS:Cleric (Cloistered Cleric).COPY=Cleric-Wizard
+#CLASS:Wizard.COPY=Cleric-Wizard.MOD
+##
+#CLASS:Cleric-Wizard.MOD	ABB:ClrWiz		SOURCEPAGE:UA	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3
+## Class Name		Spell Stat		Spell Stat Bonus		Caster level				Bonus DC					Use Spell List
+##CLASS:Cleric-Wizard.MOD	SPELLSTAT:INT	BONUSSPELLSTAT:WIS	BONUS:CASTERLEVEL|Cleric-Wizard|CL	BONUS:DC|CLASS.Cleric-Wizard|WIS-INT	SPELLLIST:3|Cleric (Cloistered Cleric)|Cleric|Wizard
